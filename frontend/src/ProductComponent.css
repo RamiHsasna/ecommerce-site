@@ -1,0 +1,47 @@
+.product {
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #ffffff; /* Change background color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for shadow */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 50px 10px rgba(255, 255, 255, 0.2);
+}
+
+.product--image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.product--title {
+  font-size: 1.5em;
+  margin: 0.5em 0; /* Add margin for spacing */
+  color: #5c6bc0;
+  font-weight: bold; /* Make the title bold */
+  text-align: center;
+}
+
+.product--button {
+  background-color: #5c6bc0;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product--button:hover {
+  background-color: #3f51b5;
+}
