@@ -18,7 +18,7 @@ app.get("/users", async (req, res) => {
 app.get("/products", async (req, res) => {
   try {
     const respone = await axios.get(
-      "https://fakestoreapi.com/products?limit=6"
+      "https://fakestoreapi.com/products?limit=8"
     );
     res.json(respone.data);
   } catch (error) {

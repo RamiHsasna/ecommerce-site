@@ -5,7 +5,7 @@ export default function ProductComponent({ title, image, price, rating }) {
   return (
     <div className="product">
       <h2 className="product--title">{title}</h2>
-      <img src={`${image}`} className="product--image" />
+      <img className="product--image" src={`${image}`} alt={title} />
       <p className="product--rating">
         {rating.rate}/5 ({rating.count})
       </p>

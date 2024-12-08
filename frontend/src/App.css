@@ -1,7 +1,16 @@
 .products--container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .products--container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

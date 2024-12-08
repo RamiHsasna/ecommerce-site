@@ -1,34 +1,39 @@
+:root {
+  --primary-color: #5c6bc0;
+  --secondary-color: #3f51b5;
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --card-background: #fff;
+  --card-border: #ccc;
+  --button-background: var(--primary-color);
+  --button-hover: var(--secondary-color);
+  --font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f9; /* Couleur de fond claire */
-  color: #333; /* Couleur du texte */
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  min-width: 320px;
   min-height: 100vh;
-}
-
-/* Conteneur principal */
-.app-container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  max-width: 900px;
-  width: 100%;
 }
 
 /* En-tête */
 h1 {
-  color: #5c6bc0; /* Couleur bleue agréable */
+  color: var(--primary-color);
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-align: center;
 }
