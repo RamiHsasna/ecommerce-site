@@ -1,8 +1,8 @@
-import UserModel from "./models/user.model.js";
-const express = require("express");
-const cors = require("cors");
-const axios = require("axios");
-const mongoose = require("mongoose");
+import express from "express"; // Change require to import
+import cors from "cors"; // Change require to import
+import axios from "axios"; // Change require to import
+import mongoose from "mongoose"; // Change require to import
+import UserModel from "./models/user.model.js";;
 
 mongoose
   .connect(process.env.MONGODB_URI, {
@@ -12,7 +12,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const User = mongoose.model("User", UserModel);
+const User = UserModel;
 
 const app = express();
 app.use(cors());

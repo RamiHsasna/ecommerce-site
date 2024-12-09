@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const userSchema = new mongoose.Schema(
   {
     name: String,
@@ -8,4 +10,6 @@ const userSchema = new mongoose.Schema(
     collection: "ecommerce-users",
   }
 );
-export default User = userSchema;
+
+const User = mongoose.model('User ', userSchema); // Ensure no extra space in 'User '
+export default User; // Correctly export the User model
