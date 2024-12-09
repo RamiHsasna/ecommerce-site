@@ -1,3 +1,4 @@
+import UserModel from "./models/user.model";
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
@@ -15,18 +16,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const userSchema = new mongoose.Schema(
-  {
-    name: String,
-    email: String,
-    password: String,
-  },
-  {
-    collection: "ecommerce-users",
-  }
-);
-
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserModel);
 
 app.get("/users", async (req, res) => {
   try {
