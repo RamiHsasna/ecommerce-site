@@ -8,8 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const User = mongoose.model("User", UserModel);
-
 app.get("/users", async (req, res) => {
   try {
     const users = await User.find();
