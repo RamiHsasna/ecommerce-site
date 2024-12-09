@@ -10,7 +10,9 @@ services:
       - /app/node_modules # Exclusion de node_modules
     environment:
       - NODE_ENV=development
-
+      - MONGODB_URI=mongodb://mongo:27017/ecommerceDB
+    depends_on:
+      - mongo
   frontend:
     build: ./frontend
     ports:
@@ -22,3 +24,12 @@ services:
       - NODE_ENV=development
     depends_on:
       - backend
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Alice Dupont",
+    "email": "alice@example.com",
+    "password": "password123"
+  },
+  {
+    "name": "Bob Martin",
+    "email": "bob@example.com",
+    "password": "securepass456"
+  },
+  {
+    "name": "Harry Potter",
+    "email": "Potter@example.com",
+    "password": "harry"
+  },
+  { "name": "Ron Wisley", "email": "Ron@example.com", "password": "ron" },
+  {
+    "name": "Hermione Granger",
+    "email": "Hermione@example.com",
+    "password": "hermione"
+  }
+]
