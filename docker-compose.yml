@@ -10,7 +10,7 @@ services:
       - /app/node_modules # Exclusion de node_modules
     environment:
       - NODE_ENV=development
-      - MONGODB_URI=mongodb://mongo:27017/ecommerceDB
+      - MONGODB_URI= mongodb+srv://ramihsasna34:sIkqeCP9EoVq6o4u@ecommercedb.amgbv.mongodb.net/?retryWrites=true&w=majority&appName=ecommerceDB
     depends_on:
       - mongo
   frontend:
