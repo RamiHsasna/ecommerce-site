@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    name: String,
     email: String,
+    name: String,
     password: String,
   },
   {
@@ -11,5 +11,5 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-const User = mongoose.model('User ', userSchema); // Ensure no extra space in 'User '
+const User = mongoose.model("User ", userSchema); // Ensure no extra space in 'User '
 export default User; // Correctly export the User model
