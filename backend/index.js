@@ -6,6 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//Get user data from the fakestore API
 app.get("/users", async (req, res) => {
   try {
     const respone = await axios.get("https://fakestoreapi.com/users?limit=10");
@@ -15,6 +16,7 @@ app.get("/users", async (req, res) => {
   }
 });
 
+//Get products data from the fakestore API
 app.get("/products", async (req, res) => {
   try {
     const respone = await axios.get(
