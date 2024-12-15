@@ -1,0 +1,27 @@
+/* CSS */
+.user {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f9f9f9;
+}
+
+.user--id,
+.user--name,
+.user--email {
+  margin: 4px 0;
+  color: #333;
+}
+
+.user-delButton {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.user-delButton:hover {
+  background-color: #e60000;
+}
