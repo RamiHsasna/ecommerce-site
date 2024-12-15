@@ -1,0 +1,33 @@
+header {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--primary-color);
+}
+
+.nav--container {
+  display: flex;
+  gap: 10px;
+}
+
+.nav--container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav--container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  header {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+}

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Cart from "./Components/Cart";
 import Users from "./Components/Users";
-import "./App.css";
 import ProductComponent from "./Components/ProductComponent";
+import Header from "./Components/Header";
+import "./App.css";
 
 export default function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [users, setUsers] = useState([]);
+
   //fetch product data from the backend endpoint
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -35,19 +37,45 @@ export default function App() {
       .catch((error) => console.error(error));
   };
 
+  const addUser = (newUser) => {
+    fetch("http://localhost:5000/users/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((response) => response.json())
+      .then((createdUser) => {
+        setUsers([...users, createdUser]);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const updateUser = (userId, updatedData) => {
+    fetch(`http://localhost:5000/users/${userId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    })
+      .then((response) => response.json())
+      .then((updatedUser) => {
+        setUsers(
+          users.map((user) => (user._id === userId ? updatedUser : user))
+        );
+      })
+      .catch((error) => console.error(error));
+  };
+
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
   //create routing to the cart page
   return (
     <div>
-      <header>
-        <h1>Liste des Produits</h1>
-        <nav>
-          <Link to="/cart">Cart ({cart.length})</Link>
-          <Link to="/users">List of Users</Link>
-        </nav>
-      </header>
+      <Header cartCount={cart.length} />
       <Routes>
         <Route
           path="/"
@@ -72,15 +100,12 @@ export default function App() {
           path="/users"
           element={
             <div className="users--container">
-              {users.map((user) => (
-                <Users
-                  key={user._id}
-                  id={user._id}
-                  name={user.name}
-                  email={user.email}
-                  deleteUser={deleteUser}
-                />
-              ))}
+              <Users
+                users={users}
+                deleteUser={deleteUser}
+                addUser={addUser}
+                updateUser={updateUser}
+              />
             </div>
           }
         />
